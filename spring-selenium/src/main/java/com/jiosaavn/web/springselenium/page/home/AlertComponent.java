@@ -15,16 +15,22 @@ public class AlertComponent extends BaseConfig {
     @FindBy(xpath = "//span[@class='c-btn c-btn--primary c-btn--medium']")
     private WebElement alertToast;
 
+    @FindBy(xpath = "//span[@class='c-modal__close']")
+    private WebElement closeAlertToast;
+
     public void acceptCookie(){
         this.cookiesToast.click();
     }
 
-    public void acceptAlertToast(){
-        this.alertToast.click();
+    public void closeAlert(){
+            this.closeAlertToast.click();
+    }
+    public void waitForAlertToAppear(){
+        this.webDriverWait.until(d->alertToast.isDisplayed());
     }
 
-    public void waitForAlertToAppear(){
-        this.alertToast.wait();
+    public void waitForAlertToDisappear(){
+        this.webDriverWait.until(d->!alertToast.isDisplayed());
     }
 
 

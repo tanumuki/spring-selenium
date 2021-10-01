@@ -16,7 +16,8 @@ public class SearchComponent extends BaseConfig {
 
 
 
-    public void search(final String query){
+    public void search( String query){
+        System.out.println("yoyoy 2");
         this.searchBox.click();
         this.searchBox.sendKeys(query);
         this.searchBox.sendKeys(Keys.RETURN);

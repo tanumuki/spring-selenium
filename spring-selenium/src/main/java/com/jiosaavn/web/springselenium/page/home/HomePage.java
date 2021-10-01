@@ -46,6 +46,6 @@ public class HomePage extends BaseConfig {
 
     @Override
     public boolean isAt() {
-        return  this.searchComponent.isAt();
+        return this.searchComponent.isAt();
     }
 }
