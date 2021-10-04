@@ -1,13 +1,9 @@
 package com.jiosaavn.web.springselenium.util;
 
-import com.github.javafaker.Faker;
-import com.jiosaavn.web.springselenium.page.BaseConfig;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.util.FileCopyUtils;
@@ -20,21 +16,22 @@ import java.nio.file.Path;
 @Component
 public class ScreenshotUtil {
 
-
+    /**
+     * Chromedriver can be type-casted to TakeScreenShot as ChromeDriver extends RemoteWebDriver which again extends TakeScreenShot
+     * Hence, we are directly using the TakeScreenShot class instead of WebDriver instance
+     */
     @Autowired
-    public TakesScreenshot driver;
+    private TakesScreenshot driver;
 
-    @Autowired
-    Faker faker;
+    @Value("${screenshot.path}/img.png")
+    private Path path;
 
-    @Value("${screenshot.path}")
-    public Path path;
-
-    public void takeScreenshot() throws IOException {
-        File sourceFile=  ((TakesScreenshot)this.driver).getScreenshotAs(OutputType.FILE);
-        FileCopyUtils.copy(sourceFile, this.path.resolve(faker.name().firstName() +".png").toFile());
+    /**
+     * The driver is taking the screenshot as the sourceFile and it is kept to the path location given to the method
+     */
+    public void takeScreenShot() throws IOException {
+        File sourceFile = this.driver.getScreenshotAs(OutputType.FILE);
+        FileCopyUtils.copy(sourceFile, this.path.toFile());
     }
-
-
 
 }

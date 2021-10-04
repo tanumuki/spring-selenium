@@ -32,7 +32,7 @@ public class SearchPageTest extends SpringBaseTestNGTest {
         System.out.println("yoyoy 1");
       //  this.homePage.getAlertComponent().waitForAlertToDisappear();
         System.out.println("yoyoy M");
-        this.screenshotUtil.takeScreenshot();
+        this.screenshotUtil.takeScreenShot();
         this.homePage.getSearchComponent().search("sanam");
 
     }

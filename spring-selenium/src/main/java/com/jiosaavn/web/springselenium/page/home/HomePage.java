@@ -20,7 +20,7 @@ public class HomePage extends BaseConfig {
 
 
 
-    @Value("${base.url}")
+    @Value("${application.url}")
     private String baseUrl;
 
     public void goTo(){
