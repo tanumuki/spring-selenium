@@ -1,5 +1,6 @@
 package com.jiosaavn.web.springselenium.config;
 
+import com.jiosaavn.web.springselenium.annotations.LazyConfiguration;
 import io.github.bonigarcia.wdm.ChromiumDriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -14,13 +15,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Scope;
 
-@Configuration
+@LazyConfiguration
 public class WebDriverConfig {
 
 
 
-    @Value("${default.timeout:10}")
-    private int timeOut;
 
 
 
@@ -32,6 +31,7 @@ public class WebDriverConfig {
         return new FirefoxDriver();
     }
     @Bean
+    @Scope("browserScope")
     @ConditionalOnMissingBean
     public WebDriver chromeDriver(){
         WebDriverManager.chromedriver().version("93.0.4577.63").setup();
@@ -40,9 +40,5 @@ public class WebDriverConfig {
 
 
 
-    @Bean
-    public WebDriverWait webDriverWait(WebDriver driver){
-        return new WebDriverWait(driver,this.timeOut);
 
-    }
 }

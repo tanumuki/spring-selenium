@@ -34,6 +34,7 @@ public class SearchPageTest extends SpringBaseTestNGTest {
         System.out.println("yoyoy M");
         this.screenshotUtil.takeScreenshot();
         this.homePage.getSearchComponent().search("sanam");
+        this.homePage.close();
 
     }
 }

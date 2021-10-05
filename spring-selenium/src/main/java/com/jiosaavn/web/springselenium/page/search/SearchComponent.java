@@ -1,12 +1,15 @@
 package com.jiosaavn.web.springselenium.page.search;
 
+import com.jiosaavn.web.springselenium.annotations.PageFragment;
 import com.jiosaavn.web.springselenium.page.BaseConfig;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component
+@PageFragment
 public class SearchComponent extends BaseConfig {
 
 

@@ -1,12 +1,15 @@
 package com.jiosaavn.web.springselenium.page.home;
 
+import com.jiosaavn.web.springselenium.annotations.Page;
 import com.jiosaavn.web.springselenium.page.BaseConfig;
 import com.jiosaavn.web.springselenium.page.search.SearchComponent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component
+@Page
 public class HomePage extends BaseConfig {
 
 
@@ -30,6 +33,10 @@ public class HomePage extends BaseConfig {
     public void maximizeScreen(){
        // driver.manage().window().fullscreen();
         driver.manage().window().maximize();
+    }
+
+    public void close(){
+        this.driver.quit();
     }
 
 
