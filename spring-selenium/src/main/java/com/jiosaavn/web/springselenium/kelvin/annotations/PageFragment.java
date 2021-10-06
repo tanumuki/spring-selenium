@@ -1,7 +1,5 @@
-package com.jiosaavn.web.springselenium.annotations;
+package com.jiosaavn.web.springselenium.kelvin.annotations;
 
-
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -9,9 +7,10 @@ import org.springframework.stereotype.Component;
 import java.lang.annotation.*;
 
 @Lazy
-@Configuration
+@Component
+@Scope("prototype")
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface LazyConfiguration {
+public @interface PageFragment {
 }

@@ -2,7 +2,7 @@ package com.jiosaavn.web.springselenium.loginTests;
 
 import com.jiosaavn.web.springselenium.SpringBaseTestNGTest;
 import com.jiosaavn.web.springselenium.page.login.HomePageLogin;
-import com.jiosaavn.web.springselenium.util.ScreenshotUtil;
+import com.jiosaavn.web.springselenium.kelvin.service.ScreenshotService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -16,7 +16,7 @@ public class loginTests extends SpringBaseTestNGTest {
     private HomePageLogin homePageLogin;
 
     @Autowired
-    private ScreenshotUtil screenshotUtil;
+    private ScreenshotService screenshotUtil;
 
     @Test
     public void testLoginWithoutCaptcha() throws IOException {

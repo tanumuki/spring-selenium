@@ -1,4 +1,4 @@
-package com.jiosaavn.web.springselenium.config;
+package com.jiosaavn.web.springselenium.kelvin.scope;
 
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.context.annotation.Bean;

@@ -1,9 +1,8 @@
-package com.jiosaavn.web.springselenium.config;
+package com.jiosaavn.web.springselenium.kelvin.config;
 
 import com.github.javafaker.Faker;
-import com.jiosaavn.web.springselenium.annotations.LazyConfiguration;
+import com.jiosaavn.web.springselenium.kelvin.annotations.LazyConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 @LazyConfiguration
 public class FakerConfig {

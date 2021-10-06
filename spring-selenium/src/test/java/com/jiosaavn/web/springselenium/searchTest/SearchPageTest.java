@@ -2,10 +2,9 @@ package com.jiosaavn.web.springselenium.searchTest;
 
 import com.jiosaavn.web.springselenium.SpringBaseTestNGTest;
 import com.jiosaavn.web.springselenium.page.home.HomePage;
-import com.jiosaavn.web.springselenium.util.ScreenshotUtil;
+import com.jiosaavn.web.springselenium.kelvin.service.ScreenshotService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -18,7 +17,7 @@ public class SearchPageTest extends SpringBaseTestNGTest {
 
     @Lazy
     @Autowired
-    private ScreenshotUtil screenshotUtil;
+    private ScreenshotService screenshotUtil;
 
 
     @Test
@@ -29,11 +28,9 @@ public class SearchPageTest extends SpringBaseTestNGTest {
         this.homePage.getAlertComponent().acceptCookie();
         this.homePage.getAlertComponent().waitForAlertToAppear();
         this.homePage.getAlertComponent().closeAlert();
-        System.out.println("yoyoy 1");
       //  this.homePage.getAlertComponent().waitForAlertToDisappear();
-        System.out.println("yoyoy M");
-        this.screenshotUtil.takeScreenShot();
         this.homePage.getSearchComponent().search("sanam");
+        this.screenshotUtil.takeScreenShot();
         this.homePage.close();
 
     }

@@ -1,12 +1,9 @@
 package com.jiosaavn.web.springselenium.page.home;
 
-import com.jiosaavn.web.springselenium.annotations.PageFragment;
+import com.jiosaavn.web.springselenium.kelvin.annotations.PageFragment;
 import com.jiosaavn.web.springselenium.page.BaseConfig;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 @PageFragment
 public class AlertComponent extends BaseConfig {
