@@ -1,11 +1,12 @@
 package com.jiosaavn.web.springselenium.page.login;
 
+import com.jiosaavn.web.springselenium.kelvin.annotations.PageFragment;
 import com.jiosaavn.web.springselenium.page.BaseConfig;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.springframework.stereotype.Component;
 
-@Component
+@PageFragment
 public class LoginResultComponent extends BaseConfig {
 
     @FindBy(xpath = "//*[@id=\"root\"]/div[2]/header/div/div[2]/aside[2]/div[1]/img")

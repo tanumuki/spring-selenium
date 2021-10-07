@@ -1,4 +1,4 @@
-package com.jiosaavn.web.springselenium.resourceTest;
+package com.jiosaavn.web.springselenium.NonBDDTests.resourceTest;
 
 import com.jiosaavn.web.springselenium.SpringBaseTestNGTest;
 import org.springframework.beans.factory.annotation.Value;
