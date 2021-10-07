@@ -1,18 +1,27 @@
 package com.jiosaavn.web.springselenium.page.login;
 
+import com.jiosaavn.web.springselenium.kelvin.annotations.Page;
+import com.jiosaavn.web.springselenium.kelvin.annotations.PageFragment;
+import com.jiosaavn.web.springselenium.kelvin.service.LoggerService;
 import com.jiosaavn.web.springselenium.page.BaseConfig;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+@PageFragment
 public class LoginPageComponent extends BaseConfig {
 
-    @FindBy(name = "email")
+    @Autowired
+    private LoggerService log;
+
+    @FindBy(xpath = "//*[@id=\"email\"]")
     private WebElement email_ib;
 
-    @FindBy(name = "password")
+    @FindBy(xpath = "//*[@id=\"password\"]")
     private WebElement password_ib;
 
     @FindBy(className = "//*[@id=\"recaptcha-anchor\"]/div[1]")
@@ -25,11 +34,12 @@ public class LoginPageComponent extends BaseConfig {
     private WebElement login_success_icon;
 
     public void loginWithCredentials(String email, String password){
-        this.email_ib.sendKeys(Keys.TAB);
+        this.email_ib.click();
         this.email_ib.sendKeys(email);
-        this.password_ib.sendKeys(Keys.TAB);
+        this.password_ib.click();
         this.password_ib.sendKeys(password);
         this.submit_btn.click();
+        log.getLogger().info("The user has clicked Submit button");
     }
 
     public void checkLoginUnsuccessful(){
@@ -38,6 +48,6 @@ public class LoginPageComponent extends BaseConfig {
 
     @Override
     public boolean isAt() {
-        return this.webDriverWait.until((d) -> this.submit_btn.isDisplayed());
+        return this.webDriverWait.until((d) -> this.email_ib.isDisplayed());
     }
 }

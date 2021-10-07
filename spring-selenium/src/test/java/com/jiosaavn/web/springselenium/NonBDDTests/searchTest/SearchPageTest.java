@@ -1,4 +1,4 @@
-package com.jiosaavn.web.springselenium.searchTest;
+package com.jiosaavn.web.springselenium.NonBDDTests.searchTest;
 
 import com.jiosaavn.web.springselenium.SpringBaseTestNGTest;
 import com.jiosaavn.web.springselenium.page.home.HomePage;
@@ -24,7 +24,7 @@ public class SearchPageTest extends SpringBaseTestNGTest {
     public void searchModuleTest() throws IOException {
 
         this.homePage.goTo();
-        this.homePage.maximizeScreen();
+//        this.homePage.maximizeScreen();
         this.homePage.getAlertComponent().acceptCookie();
         this.homePage.getAlertComponent().waitForAlertToAppear();
         this.homePage.getAlertComponent().closeAlert();
