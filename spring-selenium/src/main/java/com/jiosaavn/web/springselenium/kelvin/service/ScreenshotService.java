@@ -40,4 +40,8 @@ public class ScreenshotService {
         FileCopyUtils.copy(sourceFile, this.path.resolve(faker.name().firstName() + "png").toFile());
     }
 
+    public byte[] getScreenshot(){
+        return this.ctx.getBean(TakesScreenshot.class).getScreenshotAs(OutputType.BYTES);
+    }
+
 }

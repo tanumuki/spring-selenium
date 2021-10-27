@@ -1,4 +1,4 @@
-package com.jiosaavn.web.springselenium.loginTests;
+package com.jiosaavn.web.springselenium.NonBDDTests.loginTests;
 
 import com.jiosaavn.web.springselenium.SpringBaseTestNGTest;
 import com.jiosaavn.web.springselenium.page.login.HomePageLogin;
@@ -22,9 +22,11 @@ public class loginTests extends SpringBaseTestNGTest {
     public void testLoginWithoutCaptcha() throws IOException {
         this.homePageLogin.goTo();
         System.out.println("It came to landing page");
+        this.homePageLogin.getAlertComponent().waitForAlertToAppear();
+        this.homePageLogin.getAlertComponent().closeAlert();
+        System.out.println("alert is closed");
         this.homePageLogin.getLandingComponent().login();
         System.out.println("It came to login page");
-        Assert.assertTrue(this.homePageLogin.getLoginPageComponent().isAt(), "The submit button is present.");
         this.homePageLogin.getLoginPageComponent().loginWithCredentials("testsmdemo@gmail.com", "Saavn1234");
         this.homePageLogin.getLoginPageComponent().checkLoginUnsuccessful();
         Assert.assertTrue(this.homePageLogin.getLoginPageComponent().isAt(), "The user is still at login page.");

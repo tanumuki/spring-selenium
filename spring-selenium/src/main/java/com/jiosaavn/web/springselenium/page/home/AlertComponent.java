@@ -22,6 +22,9 @@ public class AlertComponent extends BaseConfig {
     @FindBy(xpath = "//span[@class='c-modal__close']")
     private WebElement closeAlertToast;
 
+    @FindBy(xpath = "//*[@id=\"root\"]/div[2]/header/div/div[2]/nav/ul/li[1]/a")
+    private WebElement login_btn;
+
     public void acceptCookie(){
         this.cookiesToast.click();
     }
@@ -32,18 +35,22 @@ public class AlertComponent extends BaseConfig {
         logger.warn("toast is getting clicked");
         this.closeAlertToast.click();
     }
+
     public void waitForAlertToAppear(){
-        this.webDriverWait.until(d->alertToast.isDisplayed());
+        this.webDriverWait.until((d)->this.alertToast.isDisplayed());
     }
 
     public void waitForAlertToDisappear(){
         this.webDriverWait.until(d->!alertToast.isDisplayed());
     }
 
-
+    public void maximizeScreen(){
+        this.driver.manage().window().maximize();
+    }
 
     @Override
     public boolean isAt() {
-        return false;
+
+        return this.webDriverWait.until((d)->this.login_btn.isDisplayed());
     }
 }
