@@ -1,4 +1,4 @@
-package com.jiosaavn.web.springselenium.stepDefinitions;
+package com.jiosaavn.web.springselenium.stepDefs;
 
 import com.jiosaavn.web.springselenium.SpringBaseTestNGTest;
 import com.jiosaavn.web.springselenium.page.EditProfile.UserProfileUpdate;

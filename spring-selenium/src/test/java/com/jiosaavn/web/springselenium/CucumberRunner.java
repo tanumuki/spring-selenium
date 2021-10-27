@@ -12,7 +12,7 @@ import org.testng.annotations.DataProvider;
                 "html:reports/"
         },
         strict = true,
-        tags = {"not @ignore"}
+        tags = "not @ignore"
 
 )
 public class CucumberRunner extends AbstractTestNGCucumberTests {
