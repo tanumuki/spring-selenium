@@ -29,7 +29,7 @@ public class WebDriverConfig {
     @Scope("browserScope")
     @ConditionalOnMissingBean
     public WebDriver chromeDriver(){
-        WebDriverManager.chromedriver().version("93.0.4577.63").setup();
+        WebDriverManager.chromedriver().version("95.0.4638.54").setup();
         return new ChromeDriver();
     }
 
