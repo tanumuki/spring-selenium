@@ -1,6 +1,5 @@
 Feature: Login with valid credentials
 
-  @login
   Scenario Outline: Login without captcha
     Given I am on the website
     When I click on Login button

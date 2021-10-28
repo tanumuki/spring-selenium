@@ -5,8 +5,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
@@ -14,6 +13,9 @@ import org.springframework.context.annotation.Scope;
 
 @LazyConfiguration
 public class WebDriverConfig {
+
+    @Value("${chrome}")
+    private String chromeVersion;
 
     @Bean
     @ConditionalOnProperty(name = "browser", havingValue = "firefox")
@@ -25,7 +27,7 @@ public class WebDriverConfig {
     @Scope("browserScope")
     @ConditionalOnMissingBean
     public WebDriver chromeDriver(){
-        WebDriverManager.chromedriver().version("93.0.4577.63").setup();
+        WebDriverManager.chromedriver().version(chromeVersion).setup();
         return new ChromeDriver();
     }
 
