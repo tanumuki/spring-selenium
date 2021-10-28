@@ -16,6 +16,17 @@ public class HomePage extends BaseConfig {
     @Autowired
     private AlertComponent alertComponent;
 
+    @Autowired
+    private LanguageComponent languageComponent;
+
+    @Autowired
+    private LibraryComponent libraryComponent;
+
+    @Autowired
+    private TrendingNowComponent trendingNowComponent;
+
+
+
 
 
 
@@ -41,8 +52,22 @@ public class HomePage extends BaseConfig {
         return searchComponent;
     }
 
+
+
     public AlertComponent getAlertComponent() {
         return alertComponent;
+    }
+
+    public LanguageComponent getLanguageComponent(){
+        return languageComponent;
+    }
+
+    public LibraryComponent getLibraryComponent(){
+        return libraryComponent;
+    }
+
+    public TrendingNowComponent getTrendingNowComponent(){
+        return trendingNowComponent;
     }
 
 
