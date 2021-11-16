@@ -28,6 +28,7 @@ public class EditProfileSteps extends SpringBaseTestNGTest {
     @Given("^I am on edit profile screen$")
     public void launchSite() throws Throwable {
 
+            userProfileUpdate.using
             userProfileUpdate.goTo();
             Assert.assertTrue(userProfileUpdate.isAt());
     }
@@ -39,18 +40,22 @@ public class EditProfileSteps extends SpringBaseTestNGTest {
 
     }
 
-    @And("I enter email as {string}")
-    public void iEnterEmailAs(String email) {
-        this.userProfileUpdate.setEmail(email);
+    @When("I enter credentials {string} {string} and {string}")
+    public void iEnterCredentialsAnd(String arg0, String arg1, String arg2) {
 
     }
+
+//    @And("I enter email as {string}")
+//    public void iEnterEmailAs(String email) {
+//        this.userProfileUpdate.setEmail(email);
+//
+//    }
 
     @Then("^I click submit button$")
     public void clickSubmit() throws Throwable {
         this.userProfileUpdate.submit();
 
     }
-
 
 
 }

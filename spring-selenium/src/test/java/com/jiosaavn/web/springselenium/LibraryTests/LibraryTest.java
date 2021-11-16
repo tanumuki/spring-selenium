@@ -47,7 +47,7 @@ public class LibraryTest extends SpringBaseTestNGTest {
         List<String> list=this.homePage.getLibraryComponent().getLabels();
         //    this.libraryComponent.getLibraryMainPage().getListeningHistory().openHistoryPageInNewTab();
             Thread.sleep(1000);
-         //   this.libraryComponent.getLibraryMainPage().getSongs().openSongsPageInNewTab();
+        //    this.libraryComponent.getLibraryMainPage().getSongs().openSongsPageInNewTab();
         //    this.libraryComponent.getLibraryMainPage().getAlbums().openAlbumPageInNewTab();
            // Thread.sleep(1000);
         this.homePage.getTrendingNowComponent().clickAllTiles();

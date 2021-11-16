@@ -2,11 +2,19 @@ package com.jiosaavn.web.springselenium.page.EditProfile;
 
 import com.jiosaavn.web.springselenium.kelvin.annotations.Page;
 import com.jiosaavn.web.springselenium.page.BaseConfig;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 @Page
 public class UserProfileUpdate extends BaseConfig {
+
+
+
+    public static UserProfileUpdate using(){
+     return new UserProfileUpdate();
+    }
 
 
     @FindBy(xpath = "//input[@id='first-name']")
