@@ -11,7 +11,6 @@ import org.testng.annotations.DataProvider;
                 "pretty",
                 "html:reports/"
         },
-        strict = true,
         tags = "not @ignore"
 
 )

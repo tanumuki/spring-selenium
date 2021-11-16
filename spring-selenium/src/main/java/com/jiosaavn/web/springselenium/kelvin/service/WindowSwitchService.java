@@ -12,8 +12,12 @@ public class WindowSwitchService {
 
     public void switchByTitle(final String title){
             WebDriver driver= this.ctx.getBean(WebDriver.class);
-            driver.getWindowHandles().stream().map(handle->driver.switchTo().window(handle).getTitle()).filter(t->t.startsWith(title)).findFirst().orElseThrow(() -> {
-                throw new RuntimeException("now such window");
+            driver.getWindowHandles().
+                    stream().
+                    map(handle->driver.switchTo().window(handle).getTitle()).
+                    filter(t->t.startsWith(title)).
+                    findFirst().orElseThrow(() -> {
+                        throw new RuntimeException("no such window");
 
         });
     }

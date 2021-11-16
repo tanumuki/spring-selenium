@@ -30,9 +30,9 @@ public class AlertComponent extends BaseConfig {
     }
 
     public void closeAlert(){
-        logger.info("toast is getting clicked");
-        logger.debug("toast is getting clicked");
-        logger.warn("toast is getting clicked");
+//        logger.info("toast is getting clicked");
+//        logger.debug("toast is getting clicked");
+//        logger.warn("toast is getting clicked");
         this.closeAlertToast.click();
     }
 

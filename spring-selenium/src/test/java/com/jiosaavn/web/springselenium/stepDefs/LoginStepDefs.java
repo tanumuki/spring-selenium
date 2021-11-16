@@ -40,7 +40,7 @@ public class LoginStepDefs extends SpringBaseTestNGTest {
     @Then("I should not be able to login")
     public void iShouldNotBeAbleToLogin() {
         this.homePageLogin.getLoginPageComponent().checkLoginUnsuccessful();
-        Assert.assertTrue(this.homePageLogin.getLoginPageComponent().isAt());
+        Assert.assertTrue(this.homePageLogin.isAt());
         log.getLogger().info("Homepage login without captcha is validated");
     }
 }
