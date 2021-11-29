@@ -29,8 +29,9 @@ public class UserProfileUpdate extends BaseConfig {
     @Autowired
     private CookiesRepository cookiesRepository;
 
-    public void goTo(){
+    public void goTo() throws InterruptedException {
         driver.get("https://www.jiosaavn.com/me/account");
+        addCookies();
     }
 
 
