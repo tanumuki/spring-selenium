@@ -10,13 +10,9 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.spring.CucumberContextConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Lazy;
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
 
-@CucumberContextConfiguration
+
 public class EditProfileSteps extends SpringBaseTestNGTest {
 
     @Autowired
@@ -28,20 +24,21 @@ public class EditProfileSteps extends SpringBaseTestNGTest {
     @Given("^I am on edit profile screen$")
     public void launchSite() throws Throwable {
 
-            userProfileUpdate.using
+            //userProfileUpdate.u
             userProfileUpdate.goTo();
             Assert.assertTrue(userProfileUpdate.isAt());
     }
 
-    @When("^I enter \"([^\"]*)\" and \"([^\"]*)\"$")
-    public void enterCredentials(String firstName, String lastName) throws Throwable {
-        userProfileUpdate.setNames(firstName, lastName);
-
-
-    }
+//    @When("^I enter \"([^\"]*)\" and \"([^\"]*)\"$")
+//    public void enterCredentials(String firstName, String lastName) throws Throwable {
+//        userProfileUpdate.setNames(firstName, lastName);
+//
+//
+//    }
 
     @When("I enter credentials {string} {string} and {string}")
     public void iEnterCredentialsAnd(String arg0, String arg1, String arg2) {
+        System.out.println("enter creds");
 
     }
 
