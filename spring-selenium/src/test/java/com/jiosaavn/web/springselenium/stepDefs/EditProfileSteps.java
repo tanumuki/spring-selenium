@@ -39,6 +39,7 @@ public class EditProfileSteps extends SpringBaseTestNGTest {
     @Given("^I am on edit profile screen$")
     public void launchSite() throws Throwable {
         userProfileUpdate.goTo();
+        userProfileUpdate.addCookies();
 
 
     }

@@ -9,7 +9,7 @@ import org.testng.annotations.DataProvider;
         glue = "com.jiosaavn.web.springselenium.stepDefs",
         plugin = {
                 "pretty",
-                "html:reports/"
+                "io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm"
         },
         tags = "not @ignore"
 
