@@ -13,6 +13,8 @@ target/
 .springBeans
 .sts4-cache
 test-execution.log
+test-execution.log.2021-10-26.0.gz
+
 
 ### IntelliJ IDEA ###
 .idea
