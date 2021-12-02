@@ -1,8 +1,10 @@
 package com.jiosaavn.web.springselenium.stepDefs;
 
 import com.jiosaavn.web.springselenium.SpringBaseTestNGTest;
+import com.jiosaavn.web.springselenium.kelvin.config.WebDriverWaitConfig;
 import com.jiosaavn.web.springselenium.page.EditProfile.UserProfileUpdate;
 import com.jiosaavn.web.springselenium.page.login.HomePageLogin;
+import com.jiosaavn.web.springselenium.repository.CookiesRepository;
 import com.jiosaavn.web.springselenium.repository.UserRepo;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -19,6 +21,10 @@ public class EditProfileSteps extends SpringBaseTestNGTest {
     private UserProfileUpdate userProfileUpdate;
     @Autowired
     private HomePageLogin homePageLogin;
+    @Autowired
+    private CookiesRepository cookiesRepository;
+    @Autowired
+    private WebDriverWaitConfig wait;
 
 
     @Given("^I am on edit profile screen$")
@@ -26,7 +32,9 @@ public class EditProfileSteps extends SpringBaseTestNGTest {
 
             //userProfileUpdate.u
             userProfileUpdate.goTo();
-            Assert.assertTrue(userProfileUpdate.isAt());
+        userProfileUpdate.addCookies();
+        userProfileUpdate.goTo();
+        Assert.assertTrue(userProfileUpdate.isAt());
     }
 
 //    @When("^I enter \"([^\"]*)\" and \"([^\"]*)\"$")
