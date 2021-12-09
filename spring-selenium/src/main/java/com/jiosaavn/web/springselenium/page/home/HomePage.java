@@ -25,6 +25,9 @@ public class HomePage extends BaseConfig {
     @Autowired
     private TrendingNowComponent trendingNowComponent;
 
+    @Autowired
+    private PlayerComponent playerComponent;
+
 
 
 
@@ -68,6 +71,10 @@ public class HomePage extends BaseConfig {
 
     public TrendingNowComponent getTrendingNowComponent(){
         return trendingNowComponent;
+    }
+
+    public PlayerComponent getPlayerComponent(){
+        return playerComponent;
     }
 
 

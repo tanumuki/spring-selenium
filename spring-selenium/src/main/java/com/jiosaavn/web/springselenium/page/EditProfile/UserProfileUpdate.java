@@ -49,12 +49,12 @@ public class UserProfileUpdate extends BaseConfig {
     public void addCookies() throws InterruptedException {
         List<Cookies> cookies = cookiesRepository.findAll();
 //        System.out.println("cookies2:" +cookies);
-        Thread.sleep(5000);
+        Thread.sleep(2000);
         org.openqa.selenium.Cookie c;
         for (int i = 0; i < cookies.size(); i++) {
 //            c = new org.openqa.selenium.Cookie(cookies.get(i).getName(),cookies.get(i).getValue());
 //            System.out.println("cookies:" + c);
-            System.out.println(driver.manage().getCookieNamed(cookies.get(i).getName()));
+            System.out.println("Names of cookie "+driver.manage().getCookieNamed(cookies.get(i).getName()) +" and " +driver.manage().getCookies());
             driver.manage().addCookie(new Cookie(cookies.get(i).getName(), cookies.get(i).getValue()));
 //            driver.manage().addCookie(c);
         }

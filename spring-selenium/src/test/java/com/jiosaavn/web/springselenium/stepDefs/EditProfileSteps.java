@@ -31,7 +31,7 @@ public class EditProfileSteps extends SpringBaseTestNGTest {
     public void launchSite() throws Throwable {
 
             //userProfileUpdate.u
-            userProfileUpdate.goTo();
+        userProfileUpdate.goTo();
         userProfileUpdate.addCookies();
         userProfileUpdate.goTo();
         Assert.assertTrue(userProfileUpdate.isAt());

@@ -3,6 +3,7 @@ package com.jiosaavn.web.springselenium.page.login;
 import com.jiosaavn.web.springselenium.kelvin.annotations.PageFragment;
 import com.jiosaavn.web.springselenium.page.BaseConfig;
 import com.jiosaavn.web.springselenium.page.home.AlertComponent;
+import com.jiosaavn.web.springselenium.page.home.CaptchaComponent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -21,11 +22,18 @@ public class HomePageLogin extends BaseConfig {
     @Autowired
     protected AlertComponent alertComponent;
 
+    @Autowired
+    protected CaptchaComponent captchaComponent;
+
     @Value("${application.url: https://staging.jiosaavn.com}")
     private String application_url;
 
     public void goTo(){
         this.driver.get(application_url);
+    }
+    public void goToLoginPage(){
+        this.driver.get(application_url);
+        loginPageComponent.clickLoginButton();
     }
 
     public LandingComponent getLandingComponent(){
@@ -38,6 +46,9 @@ public class HomePageLogin extends BaseConfig {
 
     public AlertComponent getAlertComponent(){
         return alertComponent;
+    }
+    public CaptchaComponent getCaptchaComponent(){
+        return captchaComponent;
     }
 
     @PreDestroy
