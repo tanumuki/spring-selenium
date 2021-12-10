@@ -21,6 +21,8 @@ public class PlayerTests {
         this.homePage.getPlayerComponent().clickSongMetaOnPlayer();
         System.out.println("meta");
         this.homePage.getPlayerComponent().getSongDuration();
+        this.homePage.getPlayerComponent().verifySongProgress();
+        this.homePage.getPlayerComponent().verifyPlayerControls();
 
     }
 
