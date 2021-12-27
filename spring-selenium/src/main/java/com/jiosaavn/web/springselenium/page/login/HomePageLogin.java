@@ -29,7 +29,13 @@ public class HomePageLogin extends BaseConfig {
     private String application_url;
 
     public void goTo(){
+        System.out.println("Opening extension");
+        driver.get("chrome-extension://obldlamadkihjlkdjblncejeblbogmnb/jiosaavn.com/login?redirect=/");
+        driver.navigate().refresh();
+        System.out.println("Refresh successfully");
+        driver.manage()
         this.driver.get(application_url);
+       // this.driver.manage().
     }
     public void goToLoginPage(){
         this.driver.get(application_url);

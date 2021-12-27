@@ -128,6 +128,46 @@
 			<version>7.1.0</version>
 			<scope>compile</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/net.lightbody.bmp/browsermob-proxy -->
+		<dependency>
+			<groupId>net.lightbody.bmp</groupId>
+			<artifactId>browsermob-core</artifactId>
+			<version>2.1.5</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/net.lightbody.bmp/browsermob-proxy -->
+		<dependency>
+			<groupId>net.lightbody.bmp</groupId>
+			<artifactId>browsermob-proxy</artifactId>
+			<version>2.1.4</version>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>net.lightbody.bmp</groupId>
+			<artifactId>browsermob-core</artifactId>
+			<version>2.1.5</version>
+			<scope>compile</scope>
+		</dependency>
+		<!-- existing LittleProxy dependency -->
+		<dependency>
+			<groupId>org.littleshoot</groupId>
+			<artifactId>littleproxy</artifactId>
+			<version>1.1.2</version>
+		</dependency>
+		<!-- new dependency on the MITM module -->
+		<dependency>
+			<groupId>net.lightbody.bmp</groupId>
+			<artifactId>mitm</artifactId>
+			<version>2.1.4</version>
+		</dependency>
+
+		<!-- new dependency on the MITM module -->
+		<dependency>
+			<groupId>net.lightbody.bmp</groupId>
+			<artifactId>mitm</artifactId>
+			<version>2.1.4</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
