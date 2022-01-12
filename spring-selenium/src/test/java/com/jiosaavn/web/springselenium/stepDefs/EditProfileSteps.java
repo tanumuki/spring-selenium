@@ -11,11 +11,19 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.spring.CucumberContextConfiguration;
+import org.openqa.selenium.Cookie;
+import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Lazy;
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 @CucumberContextConfiguration
-public class EditProfileSteps  {
+public class EditProfileSteps extends SpringBaseTestNGTest {
 
     @Autowired
     private UserProfileUpdate userProfileUpdate;
@@ -30,8 +38,8 @@ public class EditProfileSteps  {
 
     @Given("^I am on edit profile screen$")
     public void launchSite() throws Throwable {
-        userProfileUpdate.goTo();
-        userProfileUpdate.addCookies();
+        userProfileUpdate.setUp();
+        Thread.sleep(1000);
 
 
     }
@@ -56,7 +64,7 @@ public class EditProfileSteps  {
     }
 
 
-//    @Given("I have the cookie for the following user")
-//    public void iHaveTheCookieForTheFollowingUser() {
-//    }
+    @Given("I have the cookie for the following user")
+    public void iHaveTheCookieForTheFollowingUser() {
+    }
 }

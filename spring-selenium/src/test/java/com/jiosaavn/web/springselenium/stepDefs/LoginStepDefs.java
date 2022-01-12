@@ -24,6 +24,7 @@ public class LoginStepDefs extends SpringBaseTestNGTest {
         this.homePageLogin.goTo();
         this.homePageLogin.getAlertComponent().waitForAlertToAppear();
         this.homePageLogin.getAlertComponent().closeAlert();
+        this.homePageLogin.maximizeScreen();
     }
 
     @When("I click on Login button")

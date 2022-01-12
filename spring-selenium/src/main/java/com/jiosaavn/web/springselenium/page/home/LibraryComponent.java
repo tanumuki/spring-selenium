@@ -11,6 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 @PageFragment
@@ -18,6 +19,15 @@ public class LibraryComponent extends BaseConfig {
 
     @FindBy(xpath = "//aside[@class='c-aside c-aside--fixed']")
     private List<WebElement> libraryText;
+
+    @FindBy(xpath = "//*[@id=\"root\"]/div[2]/aside[2]/div/span")
+    private WebElement newPlaylist;
+
+    @FindBy(xpath = "//span[@class='o-list-block__item u-color-js-gray u-padding-vertical-tiny@sm c-btn-modal']")
+    private List<WebElement> libraryButtons;
+
+    @FindBy(xpath = "//*[@id=\"root\"]/div[2]/aside[2]/nav/ul/li[2]/span")
+    private WebElement songsButton;
 
     @Autowired
     private LibraryMainPage libraryMainPage;
@@ -41,6 +51,25 @@ public class LibraryComponent extends BaseConfig {
         return libraryText;
     }
 
+    public void clickNewPlaylist(){
+       this.newPlaylist.click();
+    }
+
+//    public void clickHistoryButton(){
+//        this.historyButton.get(1).click();
+//    }
+
+    public void clickHistoryButton(WebElement we){
+        Random rand = new Random();
+        WebElement w = this.libraryButtons.get(rand.nextInt(5));
+        w.click();
+    }
+
+    public void clickSongsButton(){
+        this.songsButton.click();
+    }
+
+
 //    @Autowired
 //    private ListeningHistory listeningHistoryPage;
 //
@@ -58,6 +87,6 @@ public class LibraryComponent extends BaseConfig {
 
     @Override
     public boolean isAt() {
-        return false;
+        return this.webDriverWait.until((d)->this.newPlaylist.isDisplayed());
     }
 }

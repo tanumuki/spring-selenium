@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
+import java.util.Random;
 
 @PageFragment
 public class SearchComponent extends BaseConfig {
@@ -21,12 +22,42 @@ public class SearchComponent extends BaseConfig {
     @FindBy(xpath = "//*[@id=\"root\"]/div[2]/header/aside/div[2]")
     private WebElement searchGrid;
 
+    @FindBy(xpath = "//*[@id=\"root\"]/div[2]/header/aside/span[1]/strong")
+    private WebElement clearBtn1;
 
-    public void search(String query){
-        System.out.println("yoyoy 2");
+    @FindBy(xpath = "//*[@id=\"root\"]/div[2]/header/aside/span[2]/i")
+    private WebElement crossBtn;
+
+    @FindBy(partialLinkText = "View All")
+    public List<WebElement> viewAllBtn;
+
+    @FindBy(partialLinkText = "Clear")
+    public WebElement clearBtn;
+
+    @FindBy(xpath = "//*[@id='root']/div[2]/header/aside/div[2]/div/div[1]/article/div[1]/figure/figcaption/h4")
+    public WebElement sanamband;
+
+
+
+    public void search(String query) throws InterruptedException {
         this.searchBox.click();
         this.searchBox.sendKeys(query);
-        this.searchBox.sendKeys(Keys.RETURN);
+        System.out.println("sent the query");
+        Thread.sleep(1500);
+        this.searchBox.sendKeys(Keys.TAB);
+//        this.searchBox.sendKeys(Keys.ENTER);
+        System.out.println("It clicked on REturn tab");
+        Thread.sleep(1500);
+    }
+
+    public void searchResultsFromViewAll(){
+//        int lengthofviewall = this.viewAllBtn.size();
+        System.out.println(this.viewAllBtn.size());
+        System.out.println(this.viewAllBtn);
+//        Random rand = new Random();
+//        WebElement w = this.viewAllBtn.get(rand.nextInt(lengthofviewall));
+//        w.click();
+        this.viewAllBtn.get(1).click();
     }
 
     public boolean getSearchResults(){

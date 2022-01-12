@@ -28,6 +28,8 @@ public class HomePageLogin extends BaseConfig {
         this.driver.get(application_url);
     }
 
+    public void maximizeScreen(){ this.driver.manage().window().maximize();}
+
     public LandingComponent getLandingComponent(){
         return landingComponent;
     }
