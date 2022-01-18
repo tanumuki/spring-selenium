@@ -16,7 +16,7 @@ test-execution.log
 test-execution.log.2021-10-26.0.gz
 
 
-### IntelliJ IDEA ###
+ pull### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml

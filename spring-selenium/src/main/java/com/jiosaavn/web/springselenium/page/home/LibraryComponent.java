@@ -32,10 +32,6 @@ public class LibraryComponent extends BaseConfig {
     @Autowired
     private LibraryMainPage libraryMainPage;
 
-//    public List<WebElement> getLibraryItemsList(){
-//        return libraryText;
-//    }
-
     public LibraryMainPage getLibraryMainPage() {
         return  libraryMainPage;
     }
@@ -55,21 +51,31 @@ public class LibraryComponent extends BaseConfig {
        this.newPlaylist.click();
     }
 
-//    public void clickHistoryButton(){
-//        this.historyButton.get(1).click();
+//    public void clickHistoryButton(WebElement we){
+//        Random rand = new Random();
+//        WebElement w = this.libraryButtons.get(rand.nextInt(5));
+//        w.click();
 //    }
-
-    public void clickHistoryButton(WebElement we){
-        Random rand = new Random();
-        WebElement w = this.libraryButtons.get(rand.nextInt(5));
-        w.click();
-    }
 
     public void clickSongsButton(){
         this.songsButton.click();
     }
 
+    public List<WebElement> getLibraryText() {
+        return libraryText;
+    }
 
+    public WebElement getNewPlaylist() {
+        return newPlaylist;
+    }
+
+    public List<WebElement> getLibraryButtons() {
+        return libraryButtons;
+    }
+
+    public WebElement getSongsButton() {
+        return songsButton;
+    }
 //    @Autowired
 //    private ListeningHistory listeningHistoryPage;
 //

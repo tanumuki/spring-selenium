@@ -4,14 +4,8 @@ import com.jiosaavn.web.springselenium.kelvin.annotations.Page;
 import com.jiosaavn.web.springselenium.page.BaseConfig;
 import com.jiosaavn.web.springselenium.page.search.SearchComponent;
 import com.jiosaavn.web.springselenium.page.search.SearchResultComponent;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-
-import java.awt.*;
-import java.awt.event.KeyEvent;
 
 @Page
 public class HomePage extends BaseConfig {
@@ -38,9 +32,11 @@ public class HomePage extends BaseConfig {
     @Autowired
     private LoginModalComponent loginModalComponent;
 
-    @Autowired HPComponent hpComponent;
+    @Autowired
+    private HPComponent hpComponent;
 
-
+    @Autowired
+    private BrowseComponent browseComponent;
 
 
     @Value("${application.url}")
@@ -85,6 +81,8 @@ public class HomePage extends BaseConfig {
     public LoginModalComponent getLoginModalComponent(){ return  loginModalComponent; }
 
     public HPComponent getHpComponent(){ return hpComponent; }
+
+    public BrowseComponent getBrowseComponent(){ return browseComponent;}
 
 
     @Override

@@ -22,6 +22,11 @@ public class WebDriverConfig {
     public WebDriver firefoxDriver(){
         WebDriverManager.firefoxdriver().setup();
         return new FirefoxDriver();
+//        System.setProperty("webdriver.gecko.driver","src/main/resources/geckodriver"); // Setting system properties of FirefoxDriver
+//        WebDriver driver = new FirefoxDriver(); //Creating an object of FirefoxDriver
+//        System.out.println("debug 7");
+//        return driver;
+
     }
     @Bean
     @Scope("browserScope")

@@ -34,9 +34,9 @@ public class loginTests extends SpringBaseTestNGTest {
         logger.info("The test is completed and passed.");
     }
 
-    @PreDestroy
-    public void closeWindows(){
-        this.homePageLogin.closeBrowsers();
-    }
+//    @PreDestroy
+//    public void closeWindows(){
+//        this.homePageLogin.closeBrowsers();
+//    }
 
 }

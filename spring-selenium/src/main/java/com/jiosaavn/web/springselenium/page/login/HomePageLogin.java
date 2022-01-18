@@ -44,7 +44,7 @@ public class HomePageLogin extends BaseConfig {
 
     @PreDestroy
     public void closeBrowsers(){
-        driver.quit();
+        driver.close();
     }
 
     @Override
