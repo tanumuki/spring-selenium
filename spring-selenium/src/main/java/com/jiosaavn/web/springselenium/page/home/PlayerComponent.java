@@ -4,6 +4,7 @@ import com.jiosaavn.web.springselenium.kelvin.annotations.PageFragment;
 import com.jiosaavn.web.springselenium.page.BaseConfig;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -48,8 +49,11 @@ public class PlayerComponent extends BaseConfig {
         Thread.sleep(10000);
     }
     public void clickSongMetaOnPlayer() throws InterruptedException {
+        System.out.println("inside click song meta player");
+       // webDriverWait.webDriverWait(ExpectedConditions.visibilityOf(songDurationMeta))
         playerSongMeta.click();
-        Thread.sleep(5000);
+        Thread.sleep(2000);
+        System.out.println("player song meta clicked");
     }
     public void getSongDuration(){
 

@@ -19,9 +19,7 @@ public class SearchStepDefs {
     private HomePage homePage;
 
     @When("I accept all the cookies and alert toast")
-    public void iAcceptAllTheCookiesAndAlertToast() {
-        this.homePage.getAlertComponent().waitForAlertToAppear();
-        this.homePage.getAlertComponent().closeAlert();
+    public void iAcceptAllTheCookiesAndAlertToast() throws InterruptedException {
         this.homePage.getAlertComponent().maximizeScreen();
     }
 

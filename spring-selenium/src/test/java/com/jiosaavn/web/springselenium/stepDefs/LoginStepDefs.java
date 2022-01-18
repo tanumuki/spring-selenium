@@ -21,8 +21,11 @@ public class LoginStepDefs extends SpringBaseTestNGTest {
     private HomePageLogin homePageLogin;
 
     @Given("I am on the website")
-    public void iAmOnTheWebsite() {
+    public void iAmOnTheWebsite() throws InterruptedException {
+        //with captcha flow
         this.homePageLogin.goTo();
+        //For blocking captcha flow
+        //this.homePageLogin.goToLoginPage();
         this.homePageLogin.getAlertComponent().waitForAlertToAppear();
         this.homePageLogin.getAlertComponent().closeAlert();
     }

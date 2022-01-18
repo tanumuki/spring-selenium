@@ -21,7 +21,7 @@ public class SearchPageTest extends SpringBaseTestNGTest {
 
 
     @Test
-    public void searchModuleTest() throws IOException {
+    public void searchModuleTest() throws IOException, InterruptedException {
 
         this.homePage.goTo();
 //        this.homePage.maximizeScreen();

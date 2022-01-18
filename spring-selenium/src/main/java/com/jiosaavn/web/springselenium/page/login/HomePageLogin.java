@@ -4,6 +4,7 @@ import com.jiosaavn.web.springselenium.kelvin.annotations.PageFragment;
 import com.jiosaavn.web.springselenium.page.BaseConfig;
 import com.jiosaavn.web.springselenium.page.home.AlertComponent;
 import com.jiosaavn.web.springselenium.page.home.CaptchaComponent;
+import org.openqa.selenium.Cookie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -30,15 +31,17 @@ public class HomePageLogin extends BaseConfig {
 
     public void goTo(){
         System.out.println("Opening extension");
-        driver.get("chrome-extension://obldlamadkihjlkdjblncejeblbogmnb/jiosaavn.com/login?redirect=/");
-        driver.navigate().refresh();
+       // driver.get("chrome-extension://obldlamadkihjlkdjblncejeblbogmnb/jiosaavn.com/login?redirect=/");
+       // driver.navigate().refresh();
         System.out.println("Refresh successfully");
-        driver.manage()
         this.driver.get(application_url);
+        System.out.println("opened "+application_url);
        // this.driver.manage().
     }
     public void goToLoginPage(){
         this.driver.get(application_url);
+        this.driver.manage().addCookie(new Cookie("captcha-bypass" ,"6R1VzqByL1WCfSfTwiUcRWqO2YcftgB1u4"));
+        this.driver.navigate().refresh();
         loginPageComponent.clickLoginButton();
     }
 

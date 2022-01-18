@@ -21,7 +21,11 @@ public class PlayerTests {
 
         //Go to login page
         homePageLogin.goToLoginPage();
-        Thread.sleep(10000);
+        Thread.sleep(3000);
+
+        /*
+        Player test cases flow are commented here just to check the captcha bypass flow
+         */
 
 //        System.out.println("clicking play button");
 //        this.homePage.getPlayerComponent().clickPlayButton();

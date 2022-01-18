@@ -19,7 +19,7 @@ public class loginTests extends SpringBaseTestNGTest {
     private ScreenshotService screenshotUtil;
 
     @Test
-    public void testLoginWithoutCaptcha() throws IOException {
+    public void testLoginWithoutCaptcha() throws IOException, InterruptedException {
         this.homePageLogin.goTo();
         System.out.println("It came to landing page");
         this.homePageLogin.getAlertComponent().waitForAlertToAppear();

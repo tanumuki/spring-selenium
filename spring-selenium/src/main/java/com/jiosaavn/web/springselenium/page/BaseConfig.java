@@ -1,5 +1,6 @@
 package com.jiosaavn.web.springselenium.page;
 
+import com.jiosaavn.web.springselenium.kelvin.config.WebDriverWaitConfig;
 import net.lightbody.bmp.BrowserMobProxy;
 import net.lightbody.bmp.BrowserMobProxyServer;
 import net.lightbody.bmp.client.ClientUtil;
