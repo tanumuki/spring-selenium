@@ -17,7 +17,7 @@ public class LanguageSelectionTest extends SpringBaseTestNGTest {
 
 
     @Test
-    public void testLanguageSelection(){
+    public void testLanguageSelection() throws InterruptedException {
 
         List<String> textList =  new ArrayList<>();
 

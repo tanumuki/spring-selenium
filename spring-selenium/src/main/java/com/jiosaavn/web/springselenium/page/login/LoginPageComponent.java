@@ -33,6 +33,9 @@ public class LoginPageComponent extends BaseConfig {
     @FindBy(xpath = "//*[@id=\"root\"]/div[2]/header/div/div[2]/aside[2]/div[1]/img")
     private WebElement login_success_icon;
 
+    @FindBy(xpath = "//a[@title='Log In']")
+    private WebElement loginButton;
+
     public void loginWithCredentials(String email, String password){
         this.email_ib.click();
         this.email_ib.sendKeys(email);
@@ -40,6 +43,10 @@ public class LoginPageComponent extends BaseConfig {
         this.password_ib.sendKeys(password);
         this.submit_btn.click();
         log.getLogger().info("The user has clicked Submit button");
+    }
+
+    public void clickLoginButton(){
+        this.loginButton.click();
     }
 
     public void checkLoginUnsuccessful(){

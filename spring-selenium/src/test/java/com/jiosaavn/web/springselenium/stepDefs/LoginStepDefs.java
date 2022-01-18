@@ -7,10 +7,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.spring.CucumberContextConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
 
-
+@CucumberContextConfiguration
 public class LoginStepDefs extends SpringBaseTestNGTest {
 
     @Autowired
@@ -20,8 +21,11 @@ public class LoginStepDefs extends SpringBaseTestNGTest {
     private HomePageLogin homePageLogin;
 
     @Given("I am on the website")
-    public void iAmOnTheWebsite() {
+    public void iAmOnTheWebsite() throws InterruptedException {
+        //with captcha flow
         this.homePageLogin.goTo();
+        //For blocking captcha flow
+        //this.homePageLogin.goToLoginPage();
         this.homePageLogin.getAlertComponent().waitForAlertToAppear();
         this.homePageLogin.getAlertComponent().closeAlert();
         this.homePageLogin.maximizeScreen();
