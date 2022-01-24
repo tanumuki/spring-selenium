@@ -38,7 +38,7 @@ public class HomePageLogin extends BaseConfig {
         System.out.println("opened "+application_url);
        // this.driver.manage().
     }
-    public void goToLoginPage(){
+    public void goToLoginPageWithoutCatpcha(){
         this.driver.get(application_url);
         this.driver.manage().addCookie(new Cookie("captcha-bypass" ,"6R1VzqByL1WCfSfTwiUcRWqO2YcftgB1u4"));
         this.driver.navigate().refresh();

@@ -23,6 +23,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 
+import java.util.concurrent.TimeUnit;
 
 
 @LazyConfiguration
@@ -168,6 +169,7 @@ Technique 3:  where the extension file is added to the chrome but the values are
        System.setProperty("webdriver.chrome.driver", "/Users/tanumukherjee/Downloads/chromedriver");
          driver = new ChromeDriver();
 
+         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         return driver;
     }
 
