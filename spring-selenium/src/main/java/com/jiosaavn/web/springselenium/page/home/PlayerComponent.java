@@ -1,5 +1,6 @@
 package com.jiosaavn.web.springselenium.page.home;
 
+import com.google.common.util.concurrent.Uninterruptibles;
 import com.jiosaavn.web.springselenium.kelvin.annotations.PageFragment;
 import com.jiosaavn.web.springselenium.kelvin.config.Util;
 import com.jiosaavn.web.springselenium.page.BaseConfig;
@@ -148,7 +149,9 @@ public class PlayerComponent extends BaseConfig {
         System.out.println("Song currently playing: "+songNameCurrentPlaying);
         this.webDriverWait.until(ExpectedConditions.visibilityOf(nextButton));
         this.nextButton.click();
-        Thread.sleep(15000);
+       // Thread.sleep(15000);
+        Uninterruptibles.sleepUninterruptibly(15000, TimeUnit.MILLISECONDS);
+
         System.out.println("clicked next button");
         WebDriverWait wait=new WebDriverWait(driver, 30);
         String pattern="0:06 / 4:13";
