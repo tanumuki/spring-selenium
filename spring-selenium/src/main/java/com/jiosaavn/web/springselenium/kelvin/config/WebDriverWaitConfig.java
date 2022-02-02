@@ -13,7 +13,7 @@ public class WebDriverWaitConfig {
 
 
 
-    @Value("${default.timeout:40}")
+    @Value("${default.timeout:30}")
     private int timeOut;
 
     @Bean

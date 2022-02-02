@@ -6,8 +6,11 @@ import com.jiosaavn.web.springselenium.page.library.Albums;
 import com.jiosaavn.web.springselenium.page.library.LibraryMainPage;
 import com.jiosaavn.web.springselenium.page.library.ListeningHistory;
 import com.jiosaavn.web.springselenium.page.library.Songs;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -20,13 +23,13 @@ public class LibraryComponent extends BaseConfig {
     @FindBy(xpath = "//aside[@class='c-aside c-aside--fixed']")
     private List<WebElement> libraryText;
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div[2]/aside[2]/div/span")
+    @FindBy(xpath = "//span[@class=\"c-btn c-btn--primary c-btn--ghost c-btn--small c-btn--thick c-btn-modal\"]")
     private WebElement newPlaylist;
 
     @FindBy(xpath = "//span[@class='o-list-block__item u-color-js-gray u-padding-vertical-tiny@sm c-btn-modal']")
     private List<WebElement> libraryButtons;
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div[2]/aside[2]/nav/ul/li[2]/span")
+    @FindBy(xpath = "//span[@class='o-list-block__item u-color-js-gray u-padding-vertical-tiny@sm c-btn-modal']")
     private WebElement songsButton;
 
     @Autowired
@@ -48,7 +51,8 @@ public class LibraryComponent extends BaseConfig {
     }
 
     public void clickNewPlaylist(){
-       this.newPlaylist.click();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.getElementsByClassName(\"c-btn c-btn--primary c-btn--ghost c-btn--small c-btn--thick c-btn-modal\")[0].click()");
     }
 
 //    public void clickHistoryButton(WebElement we){
@@ -66,7 +70,8 @@ public class LibraryComponent extends BaseConfig {
     }
 
     public WebElement getNewPlaylist() {
-        return newPlaylist;
+        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(this.newPlaylist));
+        return this.newPlaylist;
     }
 
     public List<WebElement> getLibraryButtons() {

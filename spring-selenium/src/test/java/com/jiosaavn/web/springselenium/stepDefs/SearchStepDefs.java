@@ -25,9 +25,9 @@ public class SearchStepDefs {
 //        this.homePage.getAlertComponent().closeAlert();
 //        System.out.println("closed the alert");
 //        this.homePage.getAlertComponent().maximizeScreen();
-        this.homePage.goTo();
-        this.homePage.getAlertComponent().waitForAlertToAppear();
-        this.homePage.getAlertComponent().closeAlert();
+//        this.homePage.goTo();
+//        this.homePage.getAlertComponent().waitForAlertToAppear();
+//        this.homePage.getAlertComponent().closeAlert();
     }
 
     @And("I search with the keyword {string}")

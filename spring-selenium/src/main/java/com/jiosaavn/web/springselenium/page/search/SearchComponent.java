@@ -37,6 +37,9 @@ public class SearchComponent extends BaseConfig {
     @FindBy(xpath = "//*[@id='root']/div[2]/header/aside/div[2]/div/div[1]/article/div[1]/figure/figcaption/h4")
     public WebElement sanamband;
 
+    @FindBy(xpath = "//*[@id=\"root\"]/div[2]/header/aside/div[1]/div[1]/input[1]")
+    public WebElement searchBoxLoggedInState;
+
 
 
     public void search(String query) throws InterruptedException {
@@ -63,6 +66,8 @@ public class SearchComponent extends BaseConfig {
     public boolean getSearchResults(){
         return this.searchGrid.isDisplayed();
     }
+
+    public WebElement getSearchBox(){ return this.searchBoxLoggedInState; }
 
     @Override
     public boolean isAt() {

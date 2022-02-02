@@ -8,8 +8,8 @@ import org.testng.annotations.DataProvider;
         features = "classpath:features",
         glue = "com.jiosaavn.web.springselenium.stepDefs",
         plugin = {
-                "pretty",
-                "io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm"
+                "pretty"
+//                "io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm"
         },
         tags = "not @ignore"
 

@@ -21,7 +21,7 @@ public class PlayerTests {
 
         //Go to login page
         homePageLogin.goToLoginPage();
-        Thread.sleep(3000);
+        Thread.sleep(13000);
 
         /*
         Player test cases flow are commented here just to check the captcha bypass flow

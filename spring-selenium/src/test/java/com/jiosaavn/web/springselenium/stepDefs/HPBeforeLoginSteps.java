@@ -87,14 +87,14 @@ public class HPBeforeLoginSteps extends LocatorActionService{
     }
 
     @And("I click on Surprise button button")
-    public void iClickOnSupriseButtonButton() {
+    public void iClickOnSurpriseButton() throws InterruptedException {
         clickElement(this.homePage.getBrowseComponent().getSurpriseBtn());
+        Thread.sleep(3000);
     }
 
     @Then("The player should start playing a song")
-    public void thePlayerShouldStartPlayingASong() throws InterruptedException {
+    public void thePlayerShouldStartPlayingASong() {
         sa = new SoftAssert();
-        sa.assertTrue(isElementDisplayed(this.homePage.getHpComponent().getTimestamp()), "Timestamp is not present");
-        Thread.sleep(30000);
+        sa.assertTrue(isElementDisplayed(this.homePage.getBrowseComponent().getTimestamp()), "Timestamp is not present");
     }
 }

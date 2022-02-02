@@ -22,7 +22,6 @@ import org.testng.annotations.Test;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-@CucumberContextConfiguration
 public class EditProfileSteps extends SpringBaseTestNGTest {
 
     @Autowired

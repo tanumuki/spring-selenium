@@ -2,6 +2,7 @@ package com.jiosaavn.web.springselenium.page.home;
 
 import com.jiosaavn.web.springselenium.kelvin.annotations.Page;
 import com.jiosaavn.web.springselenium.page.BaseConfig;
+import com.jiosaavn.web.springselenium.page.library.CreatePlaylistComponent;
 import com.jiosaavn.web.springselenium.page.search.SearchComponent;
 import com.jiosaavn.web.springselenium.page.search.SearchResultComponent;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,9 @@ public class HomePage extends BaseConfig {
 
     @Autowired
     private BrowseComponent browseComponent;
+
+    @Autowired
+    private CreatePlaylistComponent createPlaylistComponent;
 
 
     @Value("${application.url}")

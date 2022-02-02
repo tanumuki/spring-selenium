@@ -13,7 +13,7 @@ public class LoginModalComponent extends BaseConfig {
     private static final Logger logger = LoggerFactory.getLogger(LoginModalComponent.class);
 
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div[2]/aside[3]/div/div[1]/aside/form/div[1]/h3")
+    @FindBy(xpath = "//h3[@class='u-margin-bottom-tiny@sm']")
     public WebElement welcomeJiosaavnText;
 
     public WebElement getWelcomeJiosaavnText(){
