@@ -58,6 +58,13 @@ public class HomePageLogin extends BaseConfig {
         this.driver.navigate().refresh();
     }
 
+    public void goToLoginPage(){
+        this.driver.get(application_url);
+        loginPageComponent.clickLoginButton();
+        this.driver.manage().addCookie(new Cookie("captcha-bypass" ,"6R1VzqByL1WCfSfTwiUcRWqO2YcftgB1u4"));
+        this.driver.navigate().refresh();
+    }
+
     public void maximizeScreen(){ this.driver.manage().window().maximize();}
 
     public LandingComponent getLandingComponent(){

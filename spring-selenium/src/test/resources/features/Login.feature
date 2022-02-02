@@ -21,13 +21,13 @@ Feature: Verify different types of login
       | email               | password  |
       |testsmdemo@gmail.com | Saavn1234 |
 
-  Scenario Outline: Create new playlist
-    When I click on Login button
-    And I enter email "<email>" and password "<password>"
-    And I try to create a new playlist
-
-    Examples:
-    | email | password |
-#    | testwebauto01@saavn.com | Saavn1234 |
-#    | testwebauto00@gmail.com | Saavn1234 |
-    |paypaltest7@saavn.com|Saavn@1234|
+#  Scenario Outline: Create new playlist
+#    When I click on Login button
+#    And I enter email "<email>" and password "<password>"
+#    And I try to create a new playlist
+#
+#    Examples:
+#    | email | password |
+##    | testwebauto01@saavn.com | Saavn1234 |
+##    | testwebauto00@gmail.com | Saavn1234 |
+#    |paypaltest7@saavn.com|Saavn@1234|
