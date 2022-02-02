@@ -18,12 +18,19 @@ public class LandingComponent extends BaseConfig {
     @FindBy(xpath = "/aside/div/div[2]/span")
     private WebElement dismiss_btn;
 
+    @FindBy(xpath = "//*[@id='root']/div[2]/aside[2]/div/span")
+    private WebElement newPlaylist;
+
     public void login(){
 //        if(this.play_now_btn.isDisplayed()){
 //            System.out.println(play_now_btn+" is displayed");
 //            this.dismiss_btn.click();
 //        }
         this.login_btn.click();
+    }
+
+    public void clickPlaylistBtn(){
+        this.newPlaylist.click();
     }
 
     @Override

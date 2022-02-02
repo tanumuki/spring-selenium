@@ -19,7 +19,7 @@ public class EditProfileNew {
 
     @Given("I am on edit profile page")
     public void i_am_on_edit_profile_page() {
-        homePageLogin.goToLoginPage();
+        homePageLogin.goToLoginPageWithoutCatpcha();
     }
     @When("I set the cookie")
     public void i_set_the_cookie() throws InterruptedException {
