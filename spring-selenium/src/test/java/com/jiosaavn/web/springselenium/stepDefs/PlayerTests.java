@@ -19,22 +19,14 @@ public class PlayerTests {
     @And("^I click a song$")
     public void i_click_a_song() throws Throwable {
 
-        //Go to login page
-        homePageLogin.goToLoginPage();
-        Thread.sleep(13000);
-
-        /*
-        Player test cases flow are commented here just to check the captcha bypass flow
-         */
-
-//        System.out.println("clicking play button");
-//        this.homePage.getPlayerComponent().clickPlayButton();
-//        System.out.println(" play button clicked");
-//        this.homePage.getPlayerComponent().clickSongMetaOnPlayer();
-//        System.out.println("meta");
-//        this.homePage.getPlayerComponent().getSongDuration();
-//        this.homePage.getPlayerComponent().verifySongProgress();
-//        this.homePage.getPlayerComponent().verifyPlayerControls();
+        System.out.println("clicking play button");
+        this.homePage.getPlayerComponent().clickPlayButton();
+        System.out.println(" play button clicked");
+        this.homePage.getPlayerComponent().clickSongMetaOnPlayer();
+        System.out.println("meta");
+        this.homePage.getPlayerComponent().getSongDuration();
+        this.homePage.getPlayerComponent().verifySongProgress();
+        this.homePage.getPlayerComponent().verifyPlayerControls();
 
     }
 

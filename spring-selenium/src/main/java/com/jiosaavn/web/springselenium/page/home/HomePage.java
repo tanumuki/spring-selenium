@@ -42,6 +42,9 @@ public class HomePage extends BaseConfig {
     @Autowired
     private CreatePlaylistComponent createPlaylistComponent;
 
+    @Autowired
+    private PlayerComponent playerComponent;
+
 
     @Value("${application.url}")
     private String baseUrl;
@@ -87,6 +90,10 @@ public class HomePage extends BaseConfig {
     public HPComponent getHpComponent(){ return hpComponent; }
 
     public BrowseComponent getBrowseComponent(){ return browseComponent;}
+
+    public PlayerComponent getPlayerComponent(){
+        return playerComponent;
+    }
 
 
     @Override

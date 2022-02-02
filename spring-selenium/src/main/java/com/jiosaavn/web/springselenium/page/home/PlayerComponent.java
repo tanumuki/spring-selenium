@@ -1,5 +1,6 @@
 package com.jiosaavn.web.springselenium.page.home;
 
+import com.google.common.util.concurrent.Uninterruptibles;
 import com.jiosaavn.web.springselenium.kelvin.annotations.PageFragment;
 import com.jiosaavn.web.springselenium.kelvin.config.Util;
 import com.jiosaavn.web.springselenium.page.BaseConfig;
@@ -89,8 +90,8 @@ public class PlayerComponent extends BaseConfig {
         String durationString= songDurationMeta.getText().replaceAll("[A-Za-z ·]", "");
         System.out.println("duration22 "+durationString);
         // Get song timer displayed on player
-       String songTimer= songTimerOnPlayerElement.getText();
-      // songTimerOnPlayerElement.getAttribute()
+        String songTimer= songTimerOnPlayerElement.getText();
+        // songTimerOnPlayerElement.getAttribute()
         System.out.println("Song timer "+songTimer);
         String timerArray[] =songTimer.split("/");
         String currentTimeOnPlayer=timerArray[0].trim();
@@ -126,10 +127,10 @@ public class PlayerComponent extends BaseConfig {
         System.out.println("pause button clicked");
 
 
-         firstStyle = scrubberElement.getAttribute("style");
+        firstStyle = scrubberElement.getAttribute("style");
         System.out.println("First style "+firstStyle);
         Thread.sleep(2000);
-         secondStyle = scrubberElement.getAttribute("style");
+        secondStyle = scrubberElement.getAttribute("style");
         System.out.println("Second style "+secondStyle);
         Assert.assertEquals(firstStyle, secondStyle, "There are differences in the two styles");
         //Resetting it to play
@@ -144,15 +145,17 @@ public class PlayerComponent extends BaseConfig {
     public void verifyPlayerControls() throws InterruptedException {
 
         String nextSong="";
-      String songNameCurrentPlaying=  songNameDisplayedOnPlayer.getAttribute("title");
+        String songNameCurrentPlaying=  songNameDisplayedOnPlayer.getAttribute("title");
         System.out.println("Song currently playing: "+songNameCurrentPlaying);
         this.webDriverWait.until(ExpectedConditions.visibilityOf(nextButton));
         this.nextButton.click();
-        Thread.sleep(15000);
+        // Thread.sleep(15000);
+        Uninterruptibles.sleepUninterruptibly(15000, TimeUnit.MILLISECONDS);
+
         System.out.println("clicked next button");
         WebDriverWait wait=new WebDriverWait(driver, 30);
         String pattern="0:06 / 4:13";
-       // wait.until(ExpectedConditions.textToBePresentInElement(songNameCurrentPlaying, Pattern.compile(pattern));
+        // wait.until(ExpectedConditions.textToBePresentInElement(songNameCurrentPlaying, Pattern.compile(pattern));
         nextSong=  songNameDisplayedOnPlayer.getAttribute("title");
             /*
             Using Thread.sleep for introducing a pause of few seconds
