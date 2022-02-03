@@ -28,7 +28,7 @@ public class EditProfileTest extends SpringBaseTestNGTest {
 
 
         this.userProfileUpdate.goTo();
-        this.userProfileUpdate.addCookies();
+//        this.userProfileUpdate.addCookies();
         this.userProfileUpdate.setNames(user.getFirstName(), user.getLastName());
         this.userProfileUpdate.setEmail(user.getEmailAddress());
         this.userProfileUpdate.submit();

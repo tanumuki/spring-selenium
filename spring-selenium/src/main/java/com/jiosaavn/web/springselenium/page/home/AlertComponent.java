@@ -12,7 +12,6 @@ public class AlertComponent extends BaseConfig {
 
     private static final Logger logger = LoggerFactory.getLogger(AlertComponent.class);
 
-
     @FindBy(xpath = "//span[@class='c-btn c-btn--senary c-btn--tiny']")
     private WebElement cookiesToast;
 

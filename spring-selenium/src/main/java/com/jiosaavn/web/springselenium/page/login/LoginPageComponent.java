@@ -27,7 +27,7 @@ public class LoginPageComponent extends BaseConfig {
     @FindBy(className = "//*[@id=\"recaptcha-anchor\"]/div[1]")
     private WebElement captcha_box;
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div[2]/main/div/div/div[2]/div/div/div/div/div/section/form/fieldset/div[4]/button")
+    @FindBy(xpath = "//button[@class='c-btn c-btn--primary c-btn--wide']")
     private WebElement submit_btn;
 
     @FindBy(xpath = "//*[@id=\"root\"]/div[2]/header/div/div[2]/aside[2]/div[1]/img")
@@ -48,6 +48,8 @@ public class LoginPageComponent extends BaseConfig {
     public void clickLoginButton(){
         this.loginButton.click();
     }
+
+    public WebElement getSubmitBtn(){ return this.submit_btn; }
 
     public void checkLoginUnsuccessful(){
         this.submit_btn.isDisplayed();

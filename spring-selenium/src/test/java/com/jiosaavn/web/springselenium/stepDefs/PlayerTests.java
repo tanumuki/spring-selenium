@@ -3,6 +3,7 @@ package com.jiosaavn.web.springselenium.stepDefs;
 import com.jiosaavn.web.springselenium.page.home.HomePage;
 import com.jiosaavn.web.springselenium.page.login.HomePageLogin;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class PlayerTests {
@@ -17,7 +18,6 @@ public class PlayerTests {
 
     @And("^I click a song$")
     public void i_click_a_song() throws Throwable {
-
 
         System.out.println("clicking play button");
         this.homePage.getPlayerComponent().clickPlayButton();

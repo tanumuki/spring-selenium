@@ -2,7 +2,9 @@ package com.jiosaavn.web.springselenium.page.home;
 
 import com.jiosaavn.web.springselenium.kelvin.annotations.Page;
 import com.jiosaavn.web.springselenium.page.BaseConfig;
+import com.jiosaavn.web.springselenium.page.library.CreatePlaylistComponent;
 import com.jiosaavn.web.springselenium.page.search.SearchComponent;
+import com.jiosaavn.web.springselenium.page.search.SearchResultComponent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -26,12 +28,22 @@ public class HomePage extends BaseConfig {
     private TrendingNowComponent trendingNowComponent;
 
     @Autowired
+    private SearchResultComponent searchResultComponent;
+
+    @Autowired
+    private LoginModalComponent loginModalComponent;
+
+    @Autowired
+    private HPComponent hpComponent;
+
+    @Autowired
+    private BrowseComponent browseComponent;
+
+    @Autowired
+    private CreatePlaylistComponent createPlaylistComponent;
+
+    @Autowired
     private PlayerComponent playerComponent;
-
-
-
-
-
 
 
     @Value("${application.url}")
@@ -42,7 +54,6 @@ public class HomePage extends BaseConfig {
     }
 
     public void maximizeScreen(){
-       // driver.manage().window().fullscreen();
         driver.manage().window().maximize();
     }
 
@@ -50,12 +61,9 @@ public class HomePage extends BaseConfig {
         this.driver.quit();
     }
 
-
     public SearchComponent getSearchComponent() {
         return searchComponent;
     }
-
-
 
     public AlertComponent getAlertComponent() {
         return alertComponent;
@@ -73,11 +81,19 @@ public class HomePage extends BaseConfig {
         return trendingNowComponent;
     }
 
+    public SearchResultComponent getSearchResultComponent(){
+        return searchResultComponent;
+    }
+
+    public LoginModalComponent getLoginModalComponent(){ return  loginModalComponent; }
+
+    public HPComponent getHpComponent(){ return hpComponent; }
+
+    public BrowseComponent getBrowseComponent(){ return browseComponent;}
+
     public PlayerComponent getPlayerComponent(){
         return playerComponent;
     }
-
-
 
 
     @Override

@@ -37,7 +37,7 @@ public class ScreenshotService {
      */
     public void takeScreenShot() throws IOException {
         File sourceFile = this.ctx.getBean(TakesScreenshot.class).getScreenshotAs(OutputType.FILE);
-        FileCopyUtils.copy(sourceFile, this.path.resolve(faker.name().firstName() + "png").toFile());
+        FileCopyUtils.copy(sourceFile, this.path.resolve(faker.name().firstName() + ".png").toFile());
     }
 
     public byte[] getScreenshot(){
