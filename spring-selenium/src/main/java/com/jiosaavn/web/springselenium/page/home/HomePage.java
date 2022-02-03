@@ -45,6 +45,9 @@ public class HomePage extends BaseConfig {
     @Autowired
     private PlayerComponent playerComponent;
 
+    @Autowired
+    private HomepageHeaderComponent homepageHeaderComponent;
+
 
     @Value("${application.url}")
     private String baseUrl;
@@ -93,6 +96,10 @@ public class HomePage extends BaseConfig {
 
     public PlayerComponent getPlayerComponent(){
         return playerComponent;
+    }
+
+    public HomepageHeaderComponent getHomepageHeaderComponent(){
+        return homepageHeaderComponent;
     }
 
 

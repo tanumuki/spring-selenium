@@ -61,8 +61,10 @@ public class HPBeforeLoginSteps extends LocatorActionService{
     }
 
     @When("I click on Upgrade button")
-    public void iClickOnUpgradeButton() {
+    public void iClickOnUpgradeButton() throws InterruptedException {
         clickElement(this.homePage.getHpComponent().getUpgradeBtn());
+        System.out.println("clicked upgrade");
+        Thread.sleep(9000);
     }
 
     @Then("I can verify that new page opens on another tab")
