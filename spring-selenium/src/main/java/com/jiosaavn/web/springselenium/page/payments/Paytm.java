@@ -1,20 +1,30 @@
 package com.jiosaavn.web.springselenium.page.payments;
 
+import com.jiosaavn.web.springselenium.page.BaseConfig;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.Map;
 
-public class Paytm implements PaymentOption{
+public class Paytm extends BaseConfig implements PaymentOption {
 
 
     @FindBy(xpath = "//label[@for='paytm_1']")
-    private WebElement payWithPaytm;
+    protected WebElement payWithPaytm;
 
 
     @Override
-    public void paymentInfo(Map<String ,String> paymentDetails) {
+    public void selectPayment() {
+        System.out.println("entering inside select payment method");
+        if(payWithPaytm==null){
+            System.out.println("its null");
+        }
+        this.payWithPaytm.click();
+        System.out.println("clicked paytm");
+    }
 
-        payWithPaytm.click();
+    @Override
+    public boolean isAt() {
+        return false;
     }
 }

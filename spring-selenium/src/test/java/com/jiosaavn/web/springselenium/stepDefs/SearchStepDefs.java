@@ -20,11 +20,11 @@ public class SearchStepDefs {
 
     @When("I accept all the cookies and alert toast")
     public void iAcceptAllTheCookiesAndAlertToast() throws InterruptedException {
-//        this.homePage.getAlertComponent().waitForAlertToAppear();
-//        System.out.println("it got the alert");
-//        this.homePage.getAlertComponent().closeAlert();
-//        System.out.println("closed the alert");
-//        this.homePage.getAlertComponent().maximizeScreen();
+        this.homePage.getAlertComponent().waitForAlertToAppear();
+        System.out.println("it got the alert");
+        this.homePage.getAlertComponent().closeAlert();
+        System.out.println("closed the alert");
+        this.homePage.getAlertComponent().maximizeScreen();
 //        this.homePage.goTo();
 //        this.homePage.getAlertComponent().waitForAlertToAppear();
 //        this.homePage.getAlertComponent().closeAlert();
