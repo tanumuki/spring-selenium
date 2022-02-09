@@ -9,8 +9,10 @@ import java.util.ArrayList;
 public class PaymentPage extends BaseConfig {
 
 
-    @Autowired
-    private PaymentOption paymentOption;
+//    @Autowired
+//    private PaymentOption paymentOption;
+
+   private PaymentOption paymentOption;
 
 
     public void setPaymentOption(PaymentOption paymentOption){
