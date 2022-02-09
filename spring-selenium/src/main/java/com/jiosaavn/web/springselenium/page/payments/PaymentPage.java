@@ -29,6 +29,7 @@ public class PaymentPage extends BaseConfig {
     }
 
     public void pay(){
+        System.out.println("payment option vlaue is "+paymentOption.toString());
         this.paymentOption.selectPayment();
     }
 

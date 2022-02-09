@@ -17,6 +17,7 @@ public class Paytm extends BaseConfig implements PaymentOption {
     @Override
     public void selectPayment() {
         System.out.println("entering inside select payment method");
+        System.out.println("value of driver "+driver.toString());
         if(payWithPaytm==null){
             System.out.println("its null");
         }
