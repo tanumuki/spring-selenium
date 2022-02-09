@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+
 @PageFragment
 public class LandingComponent extends BaseConfig {
 
@@ -27,6 +29,11 @@ public class LandingComponent extends BaseConfig {
 //            this.dismiss_btn.click();
 //        }
         this.login_btn.click();
+    }
+
+    public void switchTab2(){
+        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(1));
     }
 
     public void clickPlaylistBtn(){

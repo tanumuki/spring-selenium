@@ -1,8 +1,9 @@
 package com.jiosaavn.web.springselenium.page.payments;
-
 import com.jiosaavn.web.springselenium.kelvin.annotations.PageFragment;
 import com.jiosaavn.web.springselenium.page.BaseConfig;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.ArrayList;
 
 @PageFragment
 public class PaymentPage extends BaseConfig {
@@ -18,6 +19,11 @@ public class PaymentPage extends BaseConfig {
 
     public PaymentOption getPaymentOption(PaymentOption paymentOption){
         return paymentOption;
+    }
+
+    public void switchTab(){
+        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(1));
     }
 
     public void pay(){
