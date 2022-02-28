@@ -21,14 +21,15 @@ public abstract class BaseConfig {
 
 
     @Autowired
-    protected WebDriver driver;
+    public WebDriver driver;
 
     @Autowired
     protected WebDriverWait webDriverWait;
 
     @PostConstruct
     private void init(){
-        PageFactory.initElements(this.driver,this);
+        System.out.println("driver is here "+driver);
+        PageFactory.initElements(driver,this);
     }
 
 

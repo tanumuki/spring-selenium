@@ -12,11 +12,16 @@ public class PaymentPage extends BaseConfig {
 //    @Autowired
 //    private PaymentOption paymentOption;
 
-   private PaymentOption paymentOption;
+   public PaymentOption paymentOption;
 
 
     public void setPaymentOption(PaymentOption paymentOption){
         this.paymentOption=paymentOption;
+    }
+
+    public void getTitle(){
+        System.out.println("title" +driver.getTitle());
+        System.out.println("url" +driver.getCurrentUrl());
     }
 
     public PaymentOption getPaymentOption(PaymentOption paymentOption){
@@ -30,6 +35,7 @@ public class PaymentPage extends BaseConfig {
 
     public void pay(){
         System.out.println("payment option vlaue is "+paymentOption.toString());
+        System.out.println("driver value is "+driver.toString());
         this.paymentOption.selectPayment();
     }
 
